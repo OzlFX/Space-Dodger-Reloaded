@@ -4,6 +4,6 @@ namespace KE
 {
 	void System::Draw(std::shared_ptr<Texture>& _Texture)
 	{
-		KE::Renderer::Submit(_Texture);
+		Renderer::Submit(_Texture);
 	}
 }

@@ -30,6 +30,8 @@ add_library(KeplerEngine SHARED
 	src/KeplerEngine/RenderSystem/Texture.cpp
 	src/KeplerEngine/System/System.h
 	src/KeplerEngine/System/System.cpp
+	src/KeplerEngine/Scene/Scene.h
+	src/KeplerEngine/Scene/Scene.cpp
 	src/KeplerEngine/Components/Base/Components.h
 	src/KeplerEngine/Components/Base/Components.cpp
 	src/KeplerEngine/Components/Transform.h
