@@ -5,7 +5,7 @@ namespace KE
 {
 	void GameObject::Init()
 	{
-		AddComponent<Transform>()->Init(0.0f, 0.0f, 0.0f, 0.0f);
+		AddComponent<Transform>(0.0f, 0.0f, 0.0f, 0.0f);
 	}
 
 	void GameObject::OnUpdate()

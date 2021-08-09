@@ -1,6 +1,7 @@
 #pragma once
 
-#include <unordered_map>
+#include <list>
+#include <KeplerEngine/Core/Time.h>
 #include <KeplerEngine/GameObjects/Base/GameObject.h>
 
 namespace KE
@@ -12,22 +13,20 @@ namespace KE
 		Scene();
 		Scene(const std::string _SceneName);
 
-		template <typename T>
-		void AddEntity(const std::string& _EntityName, std::shared_ptr<T>& _Entity)
-		{
-			m_Entities.emplace(_EntityName, _Entity);
-		}
+		void CreateEntity(const std::string& _EntityName = "GameObject");
 
-		const std::shared_ptr<GameObject>& GetEntity(const std::string& _EntityName) const;
+		void OnUpdate(Time _T);
+
+		const std::shared_ptr<GameObject>& GetEntity(std::shared_ptr<GameObject>& _Entity) const;
 		
-		void RemoveEntity(const std::string& _EntityName);
+		void DeleteEntity(std::shared_ptr<GameObject>& _Entity);
 
 		~Scene();
 
 	private:
 
 		const std::string m_SceneName;
-		std::unordered_map<std::string, std::shared_ptr<GameObject>> m_Entities;
+		std::list<std::shared_ptr<GameObject>> m_Entities;
 		std::weak_ptr<Scene> m_Self;
 
 	};

@@ -76,6 +76,8 @@ namespace KE
 			}
 		}
 
+		const std::string& GetName() { return m_Name; }
+
 		virtual ~GameObject() = default;
 
 	protected:
@@ -87,6 +89,7 @@ namespace KE
 
 		std::weak_ptr<GameObject> m_Self;
 		std::list<std::shared_ptr<Component>> m_Components;
+		std::string m_Name;
 
 		friend class Component;
 		friend class Scene;

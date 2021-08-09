@@ -22,6 +22,7 @@ add_library(KeplerEngine SHARED
 	src/KeplerEngine/Core/Application.h
 	src/KeplerEngine/Core/Application.cpp
 	src/KeplerEngine/Core/EntryPoint.h
+	src/KeplerEngine/Core/Time.h
 	src/KeplerEngine/Window/Window.h
 	src/KeplerEngine/Window/Window.cpp
 	src/KeplerEngine/RenderSystem/Renderer.h
