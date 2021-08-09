@@ -22,6 +22,7 @@ add_library(KeplerEngine SHARED
 	src/KeplerEngine/Core/Application.h
 	src/KeplerEngine/Core/Application.cpp
 	src/KeplerEngine/Core/EntryPoint.h
+	src/KeplerEngine/Core/Time.h
 	src/KeplerEngine/Window/Window.h
 	src/KeplerEngine/Window/Window.cpp
 	src/KeplerEngine/RenderSystem/Renderer.h
@@ -30,6 +31,8 @@ add_library(KeplerEngine SHARED
 	src/KeplerEngine/RenderSystem/Texture.cpp
 	src/KeplerEngine/System/System.h
 	src/KeplerEngine/System/System.cpp
+	src/KeplerEngine/Scene/Scene.h
+	src/KeplerEngine/Scene/Scene.cpp
 	src/KeplerEngine/Components/Base/Components.h
 	src/KeplerEngine/Components/Base/Components.cpp
 	src/KeplerEngine/Components/Transform.h
