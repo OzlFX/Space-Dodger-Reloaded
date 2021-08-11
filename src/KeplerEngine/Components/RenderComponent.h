@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "KeplerEngine/Components/Base/Components.h"
+#include <KeplerEngine/Components/Base/Components.h>
 
 namespace KE
 {
@@ -11,7 +11,7 @@ namespace KE
 	{
 	public:
 
-
+		std::shared_ptr<Texture>& GetTexture() { return m_Texture; }
 
 	private:
 

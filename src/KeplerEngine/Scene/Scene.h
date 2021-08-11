@@ -13,7 +13,7 @@ namespace KE
 		Scene();
 		Scene(const std::string _SceneName);
 
-		void CreateEntity(const std::string& _EntityName = "GameObject");
+		void CreateEntity(const std::string& _EntityName);
 
 		void OnUpdate(Time _T);
 
@@ -27,6 +27,7 @@ namespace KE
 
 		const std::string m_SceneName;
 		std::list<std::shared_ptr<GameObject>> m_Entities;
+		std::list<std::shared_ptr<Button>> m_UIElements;
 		std::weak_ptr<Scene> m_Self;
 
 	};

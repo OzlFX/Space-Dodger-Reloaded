@@ -11,4 +11,36 @@ namespace KE
 	{
 		Renderer::Submit(_Texture);
 	}
+
+	//Buttons
+	/** TODO: OnHover, OnPressed and OnReleased functionality may not need to be divided up **/
+	void System::UIButtonPressed(std::shared_ptr<Button>& _Button)
+	{
+		/// TODO: either cache the button bounds or only obtain the bounds once at the start of the program
+		SDL_Rect Bounds = CacheBounds(_Button);
+
+		//Check mouse pos if within dimensions of the object
+		SDL_GetMouseState(&m_MousePosX, &m_MousePosY);
+
+		if (((float)m_MousePosX > Bounds.x) && 
+			((float)m_MousePosY > Bounds.h) && 
+			((float)m_MousePosX < Bounds.w) && 
+			((float)m_MousePosY < Bounds.y))
+		{
+
+		}
+	}
+
+	SDL_Rect& System::CacheBounds(std::shared_ptr<Button>& _Button)
+	{
+		if (m_BoundCache.find(_Button) != m_BoundCache.end())
+		{
+			return m_BoundCache[_Button];
+		}
+		else
+		{
+			m_BoundCache.emplace(_Button, _Button->GetComponent<RenderComponent>()->GetTexture()->GetData());
+			return m_BoundCache[_Button];
+		}
+	}
 }

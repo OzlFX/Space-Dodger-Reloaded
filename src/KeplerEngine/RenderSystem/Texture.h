@@ -2,10 +2,7 @@
 
 #include <string>
 #include <glm/glm.hpp>
-
-struct SDL_Texture;
-struct SDL_Surface;
-struct SDL_Rect;
+#include <SDL.h>
 
 namespace KE
 {
