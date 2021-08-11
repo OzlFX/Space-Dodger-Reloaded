@@ -39,8 +39,12 @@ add_library(KeplerEngine SHARED
 	src/KeplerEngine/Components/Transform.cpp
 	src/KeplerEngine/Components/RenderComponent.h
 	src/KeplerEngine/Components/RenderComponent.cpp
+	src/KeplerEngine/Components/UI.h
+	src/KeplerEngine/Components/UI.cpp
 	src/KeplerEngine/GameObjects/Base/GameObject.h
 	src/KeplerEngine/GameObjects/Base/GameObject.cpp
+	src/KeplerEngine/GameObjects/UI/Button.h
+	src/KeplerEngine/GameObjects/UI/Button.cpp
 )
 
 set_target_properties( KeplerEngine

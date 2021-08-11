@@ -14,7 +14,7 @@ namespace KE
 	{
 	public:
 
-		GameObject() {}
+		GameObject() : m_Name("New Empty GameObject") {}
 
 		template <typename T, typename... Args>
 		std::shared_ptr<T> AddComponent(Args&&... _Args)
