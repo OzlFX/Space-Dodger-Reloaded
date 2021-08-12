@@ -2,11 +2,6 @@
 
 namespace KE
 {
-	Scene::Scene()
-		: m_SceneName("New Scene")
-	{
-	}
-
 	Scene::Scene(const std::string _SceneName)
 		: m_SceneName(_SceneName)
 	{

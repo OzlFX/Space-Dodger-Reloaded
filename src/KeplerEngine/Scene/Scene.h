@@ -10,7 +10,6 @@ namespace KE
 	{
 	public:
 
-		Scene();
 		Scene(const std::string _SceneName);
 
 		void CreateEntity(const std::string& _EntityName);
