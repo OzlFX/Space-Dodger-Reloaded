@@ -2,6 +2,7 @@
 
 #include <KeplerEngine/GameObjects/UI/Button.h>
 #include <KeplerEngine/RenderSystem/Renderer.h>
+#include <KeplerEngine/Scene/SceneManager.h>
 #include <KeplerEngine/Components/Transform.h>
 #include <KeplerEngine/Components/RenderComponent.h>
 #include <KeplerEngine/RenderSystem/Texture.h>
@@ -15,9 +16,11 @@ namespace KE
 		
 		static void MoveObject(std::shared_ptr<GameObject>& _Object);
 		static void Draw(std::shared_ptr<Texture>& _Texture);
+		static void ChangeScene(std::shared_ptr<Scene>& _Scene);
 
 		//Buttons
-		static void UIButtonPressed(std::shared_ptr<Button>& _Button);
+		static bool UIButtonEnter(std::shared_ptr<Button>& _Button);
+		static bool UIButtonPressed(std::shared_ptr<Button>& _Button);
 
 	private:
 

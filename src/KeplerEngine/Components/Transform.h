@@ -1,7 +1,7 @@
 #pragma once
 
 #include <glm/glm.hpp>
-#include "Base/Components.h"
+#include <KeplerEngine/Components/Base/Components.h>
 
 namespace KE
 {
