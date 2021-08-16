@@ -22,7 +22,7 @@ namespace KE
 
 	private:
 		
-		static void StartScene();
+		static void SetStartScene();
 		static void UpdateScene(Time _T);
 
 		static void ChangeScene();

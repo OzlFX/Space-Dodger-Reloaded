@@ -29,6 +29,8 @@ namespace KE
 		bool m_Running; //Run Check
 		bool m_Minimised = false; //Minimised Check
 
+		float m_LastFrameTime = 0.0f; //Last frame's time set to nothing
+
 		std::unique_ptr<Window> m_Window; //Window
 		static Application* s_Self; //Instance of the application
 

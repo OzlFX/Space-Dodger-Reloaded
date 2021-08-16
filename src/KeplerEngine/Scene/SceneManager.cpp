@@ -6,7 +6,7 @@ namespace KE
 	{
 		std::string sceneName;
 		if (m_Scenes.size() > 1)
-			sceneName = "NewScene" + m_Scenes.size();
+			sceneName = "New Scene" + m_Scenes.size();
 		else
 			sceneName = "New Scene";
 
@@ -20,9 +20,9 @@ namespace KE
 		m_Scenes.push_back(scene);
 	}
 	
-	void SceneManager::StartScene()
+	void SceneManager::SetStartScene()
 	{
-		
+		m_CurrentScene = m_Scenes.at(0);
 	}
 
 	void SceneManager::UpdateScene(Time _T)
