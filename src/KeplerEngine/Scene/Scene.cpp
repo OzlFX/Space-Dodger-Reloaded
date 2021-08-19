@@ -15,7 +15,7 @@ namespace KE
 		m_Entities.push_back(entity);
 	}
 
-	void Scene::OnUpdate(Time _T)
+	void Scene::Tick(Time _T)
 	{
 		for (auto entity : m_Entities)
 		{

@@ -2,7 +2,7 @@
 
 namespace KE
 {
-	void SceneManager::CreateScene()
+	std::shared_ptr<Scene> SceneManager::CreateScene()
 	{
 		std::string sceneName;
 		if (m_Scenes.size() > 1)
@@ -14,30 +14,42 @@ namespace KE
 		m_Scenes.push_back(scene);
 	}
 
-	void SceneManager::CreateScene(const std::string& _NewScene)
+	std::shared_ptr<Scene> SceneManager::CreateScene(const std::string& _NewScene)
 	{
 		std::shared_ptr<Scene> scene = std::make_shared<Scene>(_NewScene);
 		m_Scenes.push_back(scene);
 	}
 	
-	void SceneManager::SetStartScene()
+	void SceneManager::SetStartScene(std::shared_ptr<Scene>& _Scene)
 	{
-		m_CurrentScene = m_Scenes.at(0);
+		m_CurrentScene = _Scene;
 	}
 
 	void SceneManager::UpdateScene(Time _T)
 	{
-		m_CurrentScene->OnUpdate(_T);
+		for (auto scene : m_Scenes)
+		{
+			scene->Tick(_T);
+		}
 	}
 
-	void SceneManager::ChangeScene()
+	void SceneManager::ChangeScene(const std::shared_ptr<Scene>& _Scene)
 	{
-	}
-
-	void SceneManager::SetCurrentScene()
-	{
+		m_CurrentScene = _Scene;
 	}
 	
+	const std::shared_ptr<Scene>& SceneManager::GetScene(const std::string& _SceneName)
+	{
+		for (auto scene : m_Scenes)
+		{
+			if (scene->GetSceneName() == _SceneName)
+				return scene;
+		}
+
+		std::cout << "Scene " << _SceneName << " not found!\n";
+		return nullptr;
+	}
+
 	SceneManager::~SceneManager()
 	{
 		m_CurrentScene = nullptr;

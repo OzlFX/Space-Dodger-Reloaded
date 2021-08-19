@@ -14,9 +14,10 @@ namespace KE
 
 		void CreateEntity(const std::string& _EntityName);
 
-		void OnUpdate(Time _T);
+		void Tick(Time _T);
 
 		const std::shared_ptr<GameObject>& GetEntity(std::shared_ptr<GameObject>& _Entity) const;
+		const std::string& GetSceneName() const { return m_SceneName; }
 		
 		void DeleteEntity(std::shared_ptr<GameObject>& _Entity);
 
