@@ -27,7 +27,7 @@ namespace KE
 
 		const std::string m_SceneName;
 		std::list<std::shared_ptr<GameObject>> m_Entities;
-		std::list<std::shared_ptr<Button>> m_UIElements;
+		std::list<std::shared_ptr<Button>> m_Buttons;
 		std::weak_ptr<Scene> m_Self;
 
 	};

@@ -14,7 +14,7 @@ namespace KE
 
 	void System::ChangeScene(std::shared_ptr<Scene>& _Scene)
 	{
-		SceneManager::ChangeScene();
+		SceneManager::ChangeScene(_Scene);
 	}
 
 	//Buttons

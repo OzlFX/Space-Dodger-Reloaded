@@ -13,8 +13,8 @@ namespace KE
 	{
 	public:
 
-		static std::shared_ptr<Scene> CreateScene();
-		static std::shared_ptr<Scene> CreateScene(const std::string& _NewScene);
+		static void CreateScene();
+		static void CreateScene(const std::string& _NewScene);
 
 		static const std::shared_ptr<Scene>& GetCurrentScene() { return m_CurrentScene; }
 		static const std::shared_ptr<Scene>& GetScene(const std::string& _SceneName);
@@ -33,6 +33,8 @@ namespace KE
 		
 		static std::shared_ptr<Scene>& m_CurrentScene;
 		static std::shared_ptr<Scene>& m_NextScene;
+
+		static std::string CheckSceneConflicts(const std::string& _SceneName);
 
 		bool m_IsSceneChanging = false;
 

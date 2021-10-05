@@ -20,8 +20,7 @@ namespace KE
 	{
 		while (m_Running)
 		{
-			float time = (float)SDL_GetTicks();
-			Time _T = time - m_LastFrameTime;
+			Time _T((float)SDL_GetTicks());
 		}
 	}
 
