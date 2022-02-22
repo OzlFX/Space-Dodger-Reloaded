@@ -1,8 +1,11 @@
 #pragma once
 
 #include <list>
-#include <KeplerEngine/Core/Time.h>
-#include <KeplerEngine/GameObjects/Base/GameObject.h>
+#include <string>
+
+class GameObject;
+class Button;
+class Time;
 
 namespace KE
 {

@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "KeplerEngine/RenderSystem/Renderer.h"
 #include "Time.h"
+#include "Event.h"
 
 namespace KE
 {
@@ -18,9 +19,13 @@ namespace KE
 
 	void Application::Run()
 	{
-		while (m_Running)
+		while (SDL_PollEvent(Event::m_Event))
 		{
 			Time _T((float)SDL_GetTicks());
+
+			//Close the application on sdl close event
+			if (Event::m_Event->type == SDL_QUIT)
+				Close();
 		}
 	}
 

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <memory>
-#include <KeplerEngine/System/System.h>
 
 namespace KE
 {
@@ -23,7 +22,6 @@ namespace KE
 		bool m_Begin;
 		std::weak_ptr<GameObject> m_ParentObject;
 		friend class GameObject;
-		friend class System;
 
 	};
 }

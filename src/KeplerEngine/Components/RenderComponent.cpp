@@ -1,6 +1,7 @@
 #include "RenderComponent.h"
-#include <KeplerEngine/RenderSystem/Texture.h>
 #include <KeplerEngine/GameObjects/Base/GameObject.h>
+#include <KeplerEngine/Components/Transform.h>
+#include <KeplerEngine/RenderSystem/Renderer.h>
 
 namespace KE
 {
@@ -14,12 +15,12 @@ namespace KE
 
 	void RenderComponent::OnBegin()
 	{
-		System::Draw(m_Texture);
+		Renderer::Submit(m_Texture);
 	}
 
 	void RenderComponent::OnUpdate()
 	{
-		System::Draw(m_Texture);
+		Renderer::Submit(m_Texture);
 	}
 
 	void RenderComponent::OnDisplay()

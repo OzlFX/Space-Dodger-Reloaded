@@ -1,10 +1,27 @@
 #include "System.h"
+#include <SDL.h>
+#include <KeplerEngine/GameObjects/UI/Button.h>
+#include <KeplerEngine/RenderSystem/Renderer.h>
+#include <KeplerEngine/Scene/SceneManager.h>
+#include <KeplerEngine/Components/Transform.h>
+#include <KeplerEngine/Components/RenderComponent.h>
 
 namespace KE
 {
-	void System::MoveObject(std::shared_ptr<GameObject>& _Object)
+	void System::OnStart()
 	{
+		m_SceneManager->Start();
+	}
 
+	void System::MoveObject(std::shared_ptr<GameObject>& _Object, float _X, float _Y)
+	{
+		_Object->GetComponent<Transform>()->Position.x = _X;
+		_Object->GetComponent<Transform>()->Position.y = _Y;
+	}
+
+	void System::MoveObject(std::shared_ptr<GameObject>& _Object, glm::vec2 _NewPosition)
+	{
+		_Object->GetComponent<Transform>()->Position = _NewPosition;
 	}
 
 	void System::Draw(std::shared_ptr<Texture>& _Texture)
@@ -14,11 +31,10 @@ namespace KE
 
 	void System::ChangeScene(std::shared_ptr<Scene>& _Scene)
 	{
-		SceneManager::ChangeScene(_Scene);
+		m_SceneManager->ChangeScene(_Scene);
 	}
 
 	//Buttons
-	/** TODO: OnHover, OnPressed and OnReleased functionality may not need to be divided up **/
 	bool System::UIButtonEnter(std::shared_ptr<Button>& _Button)
 	{
 		SDL_Rect Bounds = CacheBounds(_Button);
@@ -39,8 +55,15 @@ namespace KE
 
 	bool System::UIButtonPressed(std::shared_ptr<Button>& _Button)
 	{
-		/// TODO: Check left mouse button pressed
-		if (UIButtonEnter(_Button))
+		if (UIButtonEnter(_Button) && m_Event->type == SDL_MOUSEBUTTONDOWN)
+			return true;
+		else
+			return false;
+	}
+
+	bool System::UIButtonReleased(std::shared_ptr<Button>& _Button)
+	{
+		if (UIButtonEnter(_Button) && m_Event->type == SDL_MOUSEBUTTONUP)
 			return true;
 		else
 			return false;

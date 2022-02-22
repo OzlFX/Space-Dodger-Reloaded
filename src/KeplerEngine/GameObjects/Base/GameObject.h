@@ -4,8 +4,6 @@
 #include <iostream>
 #include <list>
 
-#include <KeplerEngine/Components/Transform.h>
-
 namespace KE
 {
 	class Component;

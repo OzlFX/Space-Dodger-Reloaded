@@ -1,5 +1,6 @@
 #include "GameObject.h"
-#include "KeplerEngine/Components/Base/Components.h"
+#include <KeplerEngine/Components/Base/Components.h>
+#include <KeplerEngine/Components/Transform.h>
 
 namespace KE
 {

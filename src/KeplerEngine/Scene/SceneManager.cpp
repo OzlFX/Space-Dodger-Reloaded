@@ -1,4 +1,5 @@
 #include "SceneManager.h"
+#include <iostream>
 
 namespace KE
 {
@@ -18,10 +19,16 @@ namespace KE
 		m_Scenes.push_back(std::make_shared<Scene>(sceneName));
 	}
 	
-	//Set the starting Scene
-	void SceneManager::SetStartScene(std::shared_ptr<Scene>& _Scene)
+	//Start the Scene Manager and launch the starting scene
+	void SceneManager::Start()
 	{
-		m_CurrentScene = _Scene;
+		m_CurrentScene = m_StartScene;
+	}
+
+	//Set the starting Scene
+	void SceneManager::SetStartScene(const std::shared_ptr<Scene>& _Scene)
+	{
+		m_StartScene = _Scene;
 	}
 
 	//Update all Scenes
@@ -33,13 +40,15 @@ namespace KE
 	//Change Current Scene to a new defined Scene
 	void SceneManager::ChangeScene(const std::shared_ptr<Scene>& _Scene)
 	{
+		/// Needs a cleanup for the current scene before changing
+
 		m_CurrentScene = _Scene;
 	}
 	
 	//Get the scene based on its name, returns the first scene found or null if no scene is found
 	const std::shared_ptr<Scene>& SceneManager::GetScene(const std::string& _SceneName)
 	{
-		for (auto scene : m_Scenes)
+		for (auto& scene : m_Scenes)
 		{
 			if (scene->GetSceneName() == _SceneName)
 				return scene;
@@ -54,7 +63,7 @@ namespace KE
 		int numNameConflicts = 0;
 		int doesConflict = 0;
 
-		for (auto scenes : m_Scenes)
+		for (auto& scenes : m_Scenes)
 		{
 			if (scenes->GetSceneName() == _SceneName) //Get Scene name
 			{
@@ -72,6 +81,7 @@ namespace KE
 
 	SceneManager::~SceneManager()
 	{
+		m_StartScene = nullptr;
 		m_CurrentScene = nullptr;
 		m_Scenes.clear();
 	}

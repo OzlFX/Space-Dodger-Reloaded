@@ -1,5 +1,8 @@
 #include "Scene.h"
 
+#include <KeplerEngine/Core/Time.h>
+#include <KeplerEngine/GameObjects/Base/GameObject.h>
+
 namespace KE
 {
 	Scene::Scene(const std::string _SceneName)
@@ -17,7 +20,7 @@ namespace KE
 
 	void Scene::Tick(Time _T)
 	{
-		for (auto entity : m_Entities)
+		for (auto& entity : m_Entities)
 		{
 			entity->OnUpdate();
 		}

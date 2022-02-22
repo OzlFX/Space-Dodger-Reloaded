@@ -2,11 +2,10 @@
 
 #include <string>
 #include <KeplerEngine/Components/Base/Components.h>
+#include <KeplerEngine/RenderSystem/Texture.h>
 
 namespace KE
 {
-	class Texture;
-
 	class RenderComponent : public Component
 	{
 	public:

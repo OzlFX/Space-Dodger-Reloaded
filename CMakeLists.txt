@@ -18,19 +18,24 @@ link_directories(
 
 #Add the libraries to the project
 add_library(KeplerEngine SHARED
+	src/KeplerEngine/Core/KeplerEngine.h
 	src/KeplerEngine/Core/Core.h
 	src/KeplerEngine/Core/Application.h
 	src/KeplerEngine/Core/Application.cpp
 	src/KeplerEngine/Core/EntryPoint.h
 	src/KeplerEngine/Core/Time.h
+	src/KeplerEngine/Core/LayerManager.h
+	src/KeplerEngine/Core/LayerManager.cpp
+	src/KeplerEngine/Core/Layer.h
+	src/KeplerEngine/Core/Layer.cpp
+	src/KeplerEngine/Core/Event.h
+	src/KeplerEngine/Core/Event.cpp
 	src/KeplerEngine/Window/Window.h
 	src/KeplerEngine/Window/Window.cpp
 	src/KeplerEngine/RenderSystem/Renderer.h
 	src/KeplerEngine/RenderSystem/Renderer.cpp
 	src/KeplerEngine/RenderSystem/Texture.h
 	src/KeplerEngine/RenderSystem/Texture.cpp
-	src/KeplerEngine/System/System.h
-	src/KeplerEngine/System/System.cpp
 	src/KeplerEngine/Scene/SceneManager.h
 	src/KeplerEngine/Scene/SceneManager.cpp
 	src/KeplerEngine/Scene/Scene.h
@@ -41,6 +46,8 @@ add_library(KeplerEngine SHARED
 	src/KeplerEngine/Components/Transform.cpp
 	src/KeplerEngine/Components/RenderComponent.h
 	src/KeplerEngine/Components/RenderComponent.cpp
+	src/KeplerEngine/Components/CollisionComponent.h
+	src/KeplerEngine/Components/CollisionComponent.cpp
 	src/KeplerEngine/Components/UI.h
 	src/KeplerEngine/Components/UI.cpp
 	src/KeplerEngine/GameObjects/Base/GameObject.h
