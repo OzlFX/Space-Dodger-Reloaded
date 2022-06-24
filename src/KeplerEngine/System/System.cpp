@@ -58,4 +58,15 @@ namespace KE
 			return m_BoundCache[_Button];
 		}
 	}
+
+	//Functions only available to the application
+	void System::Init()
+	{
+		Renderer::Init();
+	}
+
+	void System::Shutdown()
+	{
+
+	}
 }

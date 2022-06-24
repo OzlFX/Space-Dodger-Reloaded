@@ -14,12 +14,13 @@ namespace KE
 
 	void RenderComponent::OnBegin()
 	{
-		System::Draw(m_Texture);
+		Renderer::Submit(m_Texture);
+		Renderer::Draw(m_Texture);
 	}
 
 	void RenderComponent::OnUpdate()
 	{
-		System::Draw(m_Texture);
+		Renderer::Draw(m_Texture);
 	}
 
 	void RenderComponent::CalculateOrigin()

@@ -24,9 +24,14 @@ namespace KE
 
 	private:
 
+		static void Init();
+		static void Shutdown();
+
 		static SDL_Rect& CacheBounds(std::shared_ptr<Button>& _Button);
 
 		static std::unordered_map<std::shared_ptr<Button>&, SDL_Rect&> m_BoundCache;
 		static int m_MousePosX, m_MousePosY;
+
+		friend class Application;
 	};
 }

@@ -1,5 +1,5 @@
 #include "Application.h"
-#include "KeplerEngine/RenderSystem/Renderer.h"
+#include "KeplerEngine/System/System.h"
 #include "Time.h"
 
 namespace KE
@@ -9,7 +9,7 @@ namespace KE
 	Application::Application()
 		: m_Running(true)
 	{
-		Renderer::Init();
+		System::Init();
 		m_Window = Window::CreateWindow("Space Dodger: Reloaded", 
 			SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 			1200, 800, false);
@@ -31,6 +31,6 @@ namespace KE
 
 	Application::~Application()
 	{
-		Renderer::Shutdown();
+		System::Shutdown();
 	}
 }
