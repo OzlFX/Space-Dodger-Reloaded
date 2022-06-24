@@ -22,7 +22,17 @@ namespace KE
 		System::Draw(m_Texture);
 	}
 
-	void RenderComponent::OnDisplay()
+	void RenderComponent::CalculateOrigin()
 	{
+		switch (m_Origin)
+		{
+		default:
+			m_Origin = Default;
+			break;
+		case Center:
+			&m_Texture->GetData();
+			
+			break;
+		}
 	}
 }

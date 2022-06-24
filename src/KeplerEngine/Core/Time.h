@@ -7,7 +7,7 @@ namespace KE
 	public:
 
 		Time(float _Time = 0.0f)
-			: m_CurrentTime(_Time), DeltaTime(m_DeltaTime)
+			: DeltaTime(m_DeltaTime), m_CurrentTime(_Time)
 		{
 
 		}
@@ -26,8 +26,8 @@ namespace KE
 	private:
 
 		float m_DeltaTime = 0.0f;
-		float m_LastFrameTime = 0.0f;
 		float m_CurrentTime;
+		float m_LastFrameTime = 0.0f;
 
 	};
 }

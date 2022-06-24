@@ -18,9 +18,16 @@ namespace KE
 		void Init(const std::string& _File, unsigned int _Width, unsigned int _Height);
 		void OnBegin();
 		void OnUpdate();
-		void OnDisplay();
+
+		void CalculateOrigin();
 
 		std::shared_ptr<Texture> m_Texture;
+
+		glm::vec2 m_OriginPosition;
+
+		enum Origins { Default, Center, TopLeft, TopRight, BottomLeft, BottomRight };
+
+		Origins m_Origin;
 
 	};
 }
