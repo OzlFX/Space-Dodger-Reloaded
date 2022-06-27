@@ -23,6 +23,8 @@ namespace KE
 
 	private:
 		
+		static void Init();
+
 		static void SetStartScene(std::shared_ptr<Scene>& _Scene = m_Scenes.at(0));
 		static void UpdateScene(Time _T);
 

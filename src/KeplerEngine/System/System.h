@@ -15,7 +15,7 @@ namespace KE
 	public:
 		
 		static void MoveObject(std::shared_ptr<GameObject>& _Object);
-		static void Draw(std::shared_ptr<Texture>& _Texture);
+		static void AddScene(std::shared_ptr<Scene>& _Scene);
 		static void ChangeScene(std::shared_ptr<Scene>& _Scene);
 
 		//Buttons

@@ -7,9 +7,9 @@ namespace KE
 
 	}
 
-	void System::Draw(std::shared_ptr<Texture>& _Texture)
+	void System::AddScene(std::shared_ptr<Scene>& _Scene)
 	{
-		Renderer::Submit(_Texture);
+		SceneManager::CreateScene();
 	}
 
 	void System::ChangeScene(std::shared_ptr<Scene>& _Scene)
@@ -63,10 +63,11 @@ namespace KE
 	void System::Init()
 	{
 		Renderer::Init();
+		SceneManager::Init();
 	}
 
 	void System::Shutdown()
 	{
-
+		Renderer::Shutdown();
 	}
 }

@@ -19,15 +19,7 @@ namespace KE
 		void OnBegin();
 		void OnUpdate();
 
-		void CalculateOrigin();
-
 		std::shared_ptr<Texture> m_Texture;
-
-		glm::vec2 m_OriginPosition;
-
-		enum Origins { Default, Center, TopLeft, TopRight, BottomLeft, BottomRight };
-
-		Origins m_Origin;
 
 	};
 }

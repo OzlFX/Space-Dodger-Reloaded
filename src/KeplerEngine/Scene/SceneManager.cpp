@@ -2,6 +2,11 @@
 
 namespace KE
 {
+	void SceneManager::Init()
+	{
+		CreateScene("Default Scene");
+	}
+
 	//Create a new Scene with a predefined, incrementing name
 	void SceneManager::CreateScene()
 	{
@@ -58,7 +63,7 @@ namespace KE
 		{
 			if (scenes->GetSceneName() == _SceneName) //Get Scene name
 			{
-				std::cout << "WARNING: Scene Name confliction! Consider changing the name to prevent issues /n";
+				std::cout << "WARNING: Scene Name conflict! Consider changing the name to prevent issues /n";
 					numNameConflicts++;
 				doesConflict = 1;
 			}
